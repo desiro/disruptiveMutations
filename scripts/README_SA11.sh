@@ -24,7 +24,7 @@ function vRNAsite() {
     do
         for s in "${settings[@]}"
         do
-            echo nice -n 10 $vsite -pfx $resVsite/${n} -fsa $data/${m}.fa -thr 42 -ovr -nex peak -cit inter -cih -cis -cie $s
+            echo nice -n 10 $vsite -pfx $resVsite/${m} -fsa $data/${m}.fa -thr 42 -ovr -nex peak -cit inter -cih -cis -cie $s
         done
     done
 }
@@ -68,7 +68,7 @@ compare_vRNAsite SA11_mutAtoE-mutX
 
 echo "# Step 5: Laboratory experiments on mutants A to E and X"
 
-echo "# Step 6; Creating reverse complement of SA11 segment 4 and insert it into SA11 segment 11 mutant A"
+echo "# Step 6: Creating reverse complement of SA11 segment 4 and insert it into SA11 segment 11 mutant A"
 #WT-S4:       862-875:GGAGGGCTGGGATA
 #WT-S11:      231-244:ACTCACCAGTTTTT
 #mutA-S11:    231-244:AaaCcCCttaTcTT
@@ -80,12 +80,12 @@ echo "# Step 6; Creating reverse complement of SA11 segment 4 and insert it into
 #GGAGGGCUGGGAUA&uaucccagcccucc mutA7: -28.80 kcal/mol
 #((((((((((((((&))))))))))))))
 
-echo "# Step 7: Predicting interactions of SA11 mutant A3 to A7 with vRNAsite"
-mut=(SA11_mutAr SA11_mutA-mutAr-mutX)
+echo "# Step 7: Predicting interactions of SA11 mutant R with vRNAsite"
+mut=(SA11_mutR SA11_mutA-mutR-mutX)
 vRNAsite ${mut[@]}
 
-echo "# Step 8: Compare interactions of SA11 mutants A, Ar, X and wild-type"
-compare_vRNAsite SA11_mutA-mutAr-mutX
+echo "# Step 8: Compare interactions of SA11 mutants A, R, X and wild-type"
+compare_vRNAsite SA11_mutA-mutR-mutX
 
-echo "# Step 9: Laboratory experiments on mutant Ar"
+echo "# Step 9: Laboratory experiments on mutant R"
 
