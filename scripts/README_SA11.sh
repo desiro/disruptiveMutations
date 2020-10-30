@@ -77,7 +77,7 @@ echo "# Step 6: Creating reverse complement of SA11 segment 4 and insert it into
 #.(((((((((((..&..)).)))))))))
 #GGAGGGCUGGGAUA&AaaCcCCuuaUcUU mutA: -7.70 kcal/mol
 #.((((...(((...&....)))...))))
-#GGAGGGCUGGGAUA&uaucccagcccucc mutA7: -28.80 kcal/mol
+#GGAGGGCUGGGAUA&uaucccagcccucc mutR: -28.80 kcal/mol
 #((((((((((((((&))))))))))))))
 
 echo "# Step 7: Predicting interactions of SA11 mutant R with vRNAsite"
