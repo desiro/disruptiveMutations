@@ -76,7 +76,7 @@ description
 
 reference
     D. Desirò, A. Borodavka, and M. Marz.
-    "DisruptiveMutations: disrupting functional long-range RNA-RNA interactions in RNA viruses."
+    "DisruptiveMutations: Disrupting functional long-range RNA-RNA interactions in RNA viruses."
     In Preparation, 2022.
     https://github.com/desiro/disruptiveMutations
 """

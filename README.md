@@ -108,6 +108,6 @@ Please cite <samp>DisruptiveMutations</samp> if you find our tool useful.
 
 ```
 D. Desirò, A. Borodavka, and M. Marz.
-"DisruptiveMutations: disrupting functional long-range RNA-RNA interactions in RNA viruses."
+"DisruptiveMutations: Disrupting functional long-range RNA-RNA interactions in RNA viruses."
 In Preparation, 2022.
 ```
