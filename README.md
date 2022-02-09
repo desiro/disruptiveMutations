@@ -50,6 +50,3 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 Please cite [rotavirusPaper](https://doi.org/10.1101/424002) if you find our tool useful.
 
-## Workflow overview
-
-![workflow](workflow.png "(a) Creates all k-mers of the query and target sequences and (b) predicts structures with RNAcofold between all query and all target k-mers. (c) Iteratively takes the query k-mer that has the most stable structure with a target k-mer, (d) creates all three nucleotide mutations of its middle nucleotide and predicts structures with RNAcofold between all three mutants and all target k-mers. (e.1) Penalizes the current most stable query k-mer if there is no query k-mer mutant less stable than the original (e.2) or otherwise takes the query k-mer mutant with the least stable structure, replaces it with the original and recalculates all query k-mers that share the mutated nucleotide. (f) Terminates and returns the mutant query sequence if there is no query k-mer that is more stable than the predefined stopping energy threshold.")

@@ -9,14 +9,16 @@ version
     disruptiveMutations.py 0.0.1 (alpha)
 
 dependencies
-    python v3.7.1, ViennaRNA v2.4.13
+    python v3.9.7, ViennaRNA v2.5.0
 
 description
-    disruptiveMutations reduces the interaction strength between a 
-    given area of the first sequence in regard to all other sequences. 
-    The tool is written in Python 3.7.1 and the calculations are 
-    performed with the RNAcofold python site-package of the ViennaRNA 
-    Package 2.4.13.
+    Reduces the interaction strength between a particular area of interest in 
+    the first sequence in relation to all other sequences. Ideally, the tool 
+    interrupts any potential interaction between this area and all other 
+    sequences. Individual predictions are performed with the RNAcofold python 
+    site-package of the ViennaRNA Package 2.5.0. Example call: python 
+    disruptiveMutations.py -pfx example -fsa example.fa -pss 32 -pse 96 -thr 4 
+    -ovr 
 
 ################################################################
 
