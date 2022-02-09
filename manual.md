@@ -1,4 +1,6 @@
-# disruptiveMutations - manual
+# <samp>disruptiveMutations</samp> - manual
+
+***
 
 ## Usage
 ```
@@ -11,10 +13,10 @@ disruptiveMutations.py 0.0.1 (alpha)
 ```
 
 ## Dependencies
-```python v3.7.1```, ```ViennaRNA v2.4.13```
+```Python v3.9.7```, ```ViennaRNA v2.5.0```
 
 ## Description
-```disruptiveMutations``` reduces the interaction strength between a given area of the first sequence in regard to all other sequences. The tool is written in ```Python 3.7.1``` and the calculations are performed with the ```RNAcofold``` python site-package of the ```ViennaRNA Package 2.4.13```.
+<samp>disruptiveMutations</samp> reduces the interaction strength between a particular area of interest in the first sequence in relation to all other sequences. Ideally, the tool interrupts any potential interaction between this area and all other sequences. Individual predictions are performed with the RNAcofold python site-package of the ViennaRNA Package 2.5.0. Example call: python disruptiveMutations.py -pfx example -fsa example.fa -pss 32 -pse 96 -thr 4 -ovr 
 
 ## Options
 ```
@@ -67,4 +69,12 @@ disruptiveMutations.py 0.0.1 (alpha)
 
 --noLP,-nlp
     disable lonely pairs for RNAcofold (default: False)
+```
+
+## References
+```
+D. Desirò, A. Borodavka, and M. Marz.
+"DisruptiveMutations: disrupting functional long-range RNA-RNA interactions in RNA viruses."
+In Preparation, 2022.
+https://github.com/desiro/disruptiveMutations
 ```
