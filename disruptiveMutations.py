@@ -222,7 +222,7 @@ def deoptimizeSnippet(snip_set, deopt, **opt):
     ## deoptimize snippets
     pname = os.path.basename(os.path.abspath(opt["var_pfx"]))
     dRNA = deopt[1]
-    r, l, n, opt["var_tem"] = len(dRNA), opt["var_slc"], len(snip_set), 10
+    r, l, n, opt["var_tem"] = len(dRNA), opt["var_slc"], len(snip_set), 46
     random.seed(opt["var_sed"])
     ## create all combinations between deoptimization candidate and other sequences
     pool_list = [(k, k+l, dRNA[k:k+l], snip, 0, opt) for k in range(0,r-l+1) for snip in snip_set]
