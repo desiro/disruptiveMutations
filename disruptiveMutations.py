@@ -222,7 +222,7 @@ def deoptimizeSnippet(snip_set, deopt, **opt):
     ## deoptimize snippets
     pname = os.path.basename(os.path.abspath(opt["var_pfx"]))
     dRNA = deopt[1]
-    r, l, n = len(dRNA), opt["var_slc"], len(snip_set)
+    r, l, n, opt["var_tem"] = len(dRNA), opt["var_slc"], len(snip_set), 10
     random.seed(opt["var_sed"])
     ## create all combinations between deoptimization candidate and other sequences
     pool_list = [(k, k+l, dRNA[k:k+l], snip, 0, opt) for k in range(0,r-l+1) for snip in snip_set]
@@ -287,7 +287,7 @@ def doCofold(RNA, constraint, **opt):
 
 def deoptimize(i, j, dRNA, snip_set, **opt):
     ## deoptimize snip
-    l, t, opt["var_tem"] = opt["var_slc"], floor(opt["var_slc"]/2), 10
+    l, t = opt["var_slc"], floor(opt["var_slc"]/2)
     mut_list = list()
     for r in ["A","C","G","U"]:
         dsnip = f"{dRNA[i:i+t]}{r}{dRNA[i+t+1:j]}"
