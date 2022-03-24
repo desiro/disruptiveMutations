@@ -156,6 +156,15 @@ def makeDir(**opt):
     opt["var_pfx"] = dir_name
     return opt
 
+def doCofold(RNA, constraint, **opt):
+    ## do Cofold
+    cvar.dangles = opt["var_dng"]
+    cvar.noLP = int(opt["var_nlp"])
+    fc = fold_compound(RNA)
+    fc.constraints_add(constraint, CONSTRAINT_DB | CONSTRAINT_DB_DEFAULT)
+    pattern, mfe = fc.mfe_dimer()
+    return mfe, pattern
+
 def readFasta(**opt):
     ## read fasta file
     data_dict, deopt = dict(), ("", "")
@@ -266,9 +275,19 @@ def deoptimizeSnippetMulti(i, j, dsnip, snip, block, opt):
     mfe, pattern = doCofold(RNA, constraint, **opt)
     return (i, j, float(mfe), snip, block)
 
+def doCofold(RNA, constraint, **opt):
+    ## do Cofold
+    cvar.dangles = opt["var_dng"]
+    cvar.noLP = int(opt["var_nlp"])
+    cvar.temperature = opt["var_tem"]
+    fc = fold_compound(RNA)
+    fc.constraints_add(constraint, CONSTRAINT_DB | CONSTRAINT_DB_DEFAULT)
+    pattern, mfe = fc.mfe_dimer()
+    return mfe, pattern
+
 def deoptimize(i, j, dRNA, snip_set, **opt):
     ## deoptimize snip
-    l, t = opt["var_slc"], floor(opt["var_slc"]/2)
+    l, t, opt["var_tem"] = opt["var_slc"], floor(opt["var_slc"]/2), 10
     mut_list = list()
     for r in ["A","C","G","U"]:
         dsnip = f"{dRNA[i:i+t]}{r}{dRNA[i+t+1:j]}"
@@ -289,15 +308,6 @@ def reoptimize(p_list, x, y, dRNA, **opt):
     for idx,dx in zip(range(x,y),range(0,len(s_list))):
         p_list[idx] = s_list[dx]
     return p_list
-
-def doCofold(RNA, constraint, **opt):
-    ## do Cofold
-    cvar.dangles = opt["var_dng"]
-    cvar.noLP = int(opt["var_nlp"])
-    fc = fold_compound(RNA)
-    fc.constraints_add(constraint, CONSTRAINT_DB | CONSTRAINT_DB_DEFAULT)
-    pattern, mfe = fc.mfe_dimer()
-    return mfe, pattern
 
 
 
